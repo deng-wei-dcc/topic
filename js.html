@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // typeof 和 instanceof的区别
+        let obj1 = {
+            num: 418,
+            info: {
+                name: 'dw',
+                age: 18
+            }
+        }
+        // console.log(typeof obj1)
+
+        let arr = []
+        // console.log(arr instanceof Array)
+
+        // 判断两个对象相等
+        let obj2 = {
+            num: 418,
+            info: {
+                name: 'dw',
+                age: 18
+            }
+        }
+        // console.log(obj1 == obj2)
+        //eg.1
+        // console.log(JSON.stringify(obj1) == JSON.stringify(obj2))
+        //eg.2
+        function checkObj(obj1,obj2){
+            if(typeof obj1 != 'object' && typeof obj2 != 'object') return false
+            // 内存地址相同直接返回true
+            if(obj1 === obj2){
+                return true
+            }
+            for(let i in obj1) {
+                // 遍历第一个对象拿到key，然后判断第二个对象中是否有这个字段
+                if(obj2.hasOwnProperty(i)) {
+                    if(typeof obj1[i] == 'object'){
+                        checkObj(obj1[i],obj2[i])
+                    }else {
+                        return obj1[i] == obj2[i]
+                    }
+                }else {
+                    return false
+                }
+            }
+        }
+        console.log(checkObj(obj1,obj2))
+
+        // 数组操作
+        let array = ['h5','css3','js','vue','小程序']
+        // array.unshift('es6','uni-app','flutter')
+        // array.push('es6','uni-app','flutter')
+        // array.pop()
+        // array.shift()
+        // array.splice(3,0,'es6','uni-app','flutter')
+        // console.log(array.slice(1,3))
+
+
+        // 字符串操作
+        let str = '继续刷面试题吧!加油!'
+        // console.log(str.slice(8))
+        // console.log(str.split('!'))
+        // console.log(str.charAt(6))
+        // console.log(str.indexOf('吧'))
+
+        // 如何判断一个变量是数组
+        let foo = []
+        // console.log(({}).toString.call(foo).slice(8,-1))
+
+
+        // js高级 - 原型对象
+        let o = new Object
+        // console.log(o.__proto__ === Object.prototype)
+        console.log(o.constructor === Object.prototype.constructor)
+        console.dir(o)
+    </script>
+</body>
+</html>

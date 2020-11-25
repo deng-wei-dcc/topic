@@ -63,6 +63,23 @@
             white-space:nowrap;
         }
     </style>
+    <style>
+        .transform{
+            width: 400px;
+            height: 400px;
+            background-color: #000;
+            /* perspective: 1000px; */
+            /* transform-style: preserve-3d; */
+        }
+        .transform-c{
+            width: 200px;
+            height: 200px;
+            background-color: cadetblue;
+            /* transform: translate(200px,200px) rotate(45deg) scale(2); */
+            /* transform: skew(15deg,15deg); */
+            transform:perspective(800px) rotateX(45deg);
+        }
+    </style>
 </head>
 <body>
     <!-- <div class="box"></div>
@@ -75,5 +92,9 @@
 
     <!-- 文本效果 -->
     <p class="text">加油!士大夫九点十六分手动阀打发的</p>
+    <!-- 变换 -->
+    <div class="transform">
+        <div class="transform-c"></div>
+    </div>
 </body>
 </html>

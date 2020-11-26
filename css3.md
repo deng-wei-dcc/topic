@@ -78,3 +78,67 @@
     + rotateZ       z轴旋转
     + rotate3d()
 
+##### 过渡
+    + transition-property           指定要过度的css属性
+        + all                       所有属性应用过度(不写默认全部)
+        + none                      没有属性应用
+        + 属性名                     多个用逗号隔开
+    + transition-duration           设置过度需要的时间
+    + transition-timing-function    设置过度时运动速度
+        + linear                    匀速运动         
+        + ease                      慢-->快-->慢
+        + ease-in                   以慢速开始运动
+        + ease-out                  以慢速结束
+        + ease-in-out               以慢速开始和结束
+    + transiton-delay               延迟多少秒执行
+    + transiton                     复合属性
+        属性、过度时间、运动速度、延迟时间
+
+##### 动画 
+    + @keyframes        定义动画
+        格式： 
+            @keyframes 名称 {
+                form{} 或 0%
+                          ...
+                to{}   或 100%
+            }
+    + animation         将动画绑定到选择器(复合属性)
+        动画名称、周期运动时间、速度、延迟执行时间、动画执行次数、下个周期是否逆向执行、动画运行状态(暂停/运行)
+    
+    + animation-name                动画名称
+    + animation-duration            运动需要的时间
+
+    + animation-timimg-function     运动速度
+        + linear                    匀速运动         
+        + ease                      慢-->快-->慢
+        + ease-in                   以慢速开始运动
+        + ease-out                  以慢速结束
+        + ease-in-out               以慢速开始和结束
+
+    + animation-delay               延迟执行
+
+    + animation-iteration-count     执行次数
+        + infinite                  无限次播放
+        + 自定义次数n
+
+    + animation-direction           下个周期执行方向
+        + reverse                   反向执行
+        + alternate                 奇数(正向)/偶数(反向)
+        + alternate-reverse         奇数(反向)/偶数(正向)
+
+    + animation-play-state          执行状态
+        + paused                    暂停
+        + running                   运行
+
+##### 盒模型
+    + 普通盒模型 - 默认
+        box-sizing: content-box;
+        元素大小 = 设置的宽高 + bordr + padding
+    + 怪异盒模型
+        box-sizing: border-box;
+        元素大小 = 设置的宽高
+
+##### 弹性盒模型flex
+    + display           开启弹性盒模型
+        flex 或 inline-flex
+    + flex-direction    

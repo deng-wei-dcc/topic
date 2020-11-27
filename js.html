@@ -51,7 +51,7 @@
                 }
             }
         }
-        console.log(checkObj(obj1,obj2))
+        // console.log(checkObj(obj1,obj2))
 
         // 数组操作
         let array = ['h5','css3','js','vue','小程序']
@@ -78,8 +78,43 @@
         // js高级 - 原型对象
         let o = new Object
         // console.log(o.__proto__ === Object.prototype)
-        console.log(o.constructor === Object.prototype.constructor)
-        console.dir(o)
+        // console.log(o.constructor === Object.prototype.constructor)
+        // console.dir(o)
+    </script>
+    <!-- 时间对象封装 -->
+    <script>
+        function formatDate (date,formate) {
+            formate = formate || 'yyyy/MM/dd hh:mm:ss'
+            let obj = {
+                'y+': date.getFullYear(),
+                'M+': date.getMonth() + 1,
+                'd+': date.getDate(),
+                'h+': date.getHours(),
+                'm+': date.getMinutes(),
+                's+': date.getSeconds()
+            }
+            for(let i in obj){
+                if(new RegExp(i).test(formate)){
+                    formate = formate.replace(new RegExp(i),obj[i])
+                    console.log(obj[i])
+                }
+            }
+            return formate
+        }
+        formatDate(new Date(),'yyyy-MM-dd hh:mm:ss')
+
+
+        function fn() {
+            console.log(a)
+            var a = 1
+            a = 8
+            function a() {
+                
+            }
+            a()
+            console.log(a)
+        }
+        fn()
     </script>
 </body>
 </html>

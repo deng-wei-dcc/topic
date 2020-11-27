@@ -68,6 +68,25 @@
 
 #### js高级
 
+##### 封装一个时间格式化函数
+    function formatDate (date,formate) {
+        formate = formate || 'yyyy/MM/dd hh:mm:ss'
+        let obj = {
+            'y+': date.getFullYear(),
+            'M+': date.getMonth() + 1,
+            'd+': date.getDate(),
+            'h+': date.getHours(),
+            'm+': date.getMinutes(),
+            's+': date.getSeconds()
+        }
+        for(let i in obj){
+            if(new RegExp(i).test(formate)){
+                formate = formate.replace(new RegExp(i),obj[i])
+            }
+        }
+        return formate
+    }
+
 ##### 什么原型对象 prototype
     每个构造器（构造函数）都有一个prototype属性，这个属性的值是一个对象，这对象叫原型对象。
     在创建实例时，构造函数的prototype属性会传递给实例对象的__proto__属性上，即实例原型(__proto__) = 构造函数原型(prototype)
